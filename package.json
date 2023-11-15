@@ -1,0 +1,10 @@
+{
+  "name": "friendly-matrix",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts"
+  ],
+  "types": "index.d.ts"
+}
