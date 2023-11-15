@@ -861,3 +861,9 @@ Update the ORDER of this matrix.
 ###### Returns
 
 `void`
+
+---
+
+## License
+
+© 2023, Antholife. Released under [MIT License](./LICENCE).
