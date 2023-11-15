@@ -26,7 +26,7 @@ Friendly-matrix is a JavaScript library that provides a user-friendly interface 
 # Contents
 - [Requirements 📋](#requirements)
 - [Motivations 💪](#motivations)
-- [Contributing](#contributing)
+- [Contributing 🤝](#contributing)
 - [Features 🛠️](#features)
 - [Installation ⬇️](#installation)
 - [Basic usage 🧐](#basic-usage)
