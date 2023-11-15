@@ -1,6 +1,6 @@
 
 
-![plot](./icon/FM.png)
+![plot](docs/assets/FM.png)
 
 [![npm version](https://img.shields.io/npm/v/friendly-matrix.svg)](https://www.npmjs.com/package/friendly-matrix)
 [![Version Status](https://travis-ci.com/yourusername/friendly-matrix.svg?branch=master)](https://travis-ci.com/yourusername/friendly-matrix)
