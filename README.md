@@ -2,12 +2,17 @@
 
 ![plot](docs/assets/FM.png)
 
-[![npm version](https://img.shields.io/npm/v/friendly-matrix.svg)](https://www.npmjs.com/package/friendly-matrix)
-[![Version Status](https://travis-ci.com/yourusername/friendly-matrix.svg?branch=master)](https://travis-ci.com/yourusername/friendly-matrix)
-[![License](https://img.shields.io/npm/l/friendly-matrix.svg)](https://www.npmjs.com/package/friendly-matrix)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub version](https://img.shields.io/github/package-json/v/Antholife/friendly-matrix)
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+[![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/friendly-matrix)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Antholife/friendly-matrix)
+![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
+
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
+
+[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 #
 Friendly-matrix is a JavaScript library that provides a user-friendly interface for matrix manipulation. It simplifies various matrix operations, offering flexibility and ease of use for developers working with matrices in JS/TS projects.

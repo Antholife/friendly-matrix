@@ -1,31 +1,42 @@
 {
-  "name": "Friendly-Matrix",
-  "version": "1.0.0",
+  "name": "friendly-matrix",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "files": [
     "lib/index.js",
     "lib/index.d.ts"
   ],
   "types": "lib/index.d.ts",
-    "keywords": [
-        "matrix",
-        "math",
-        "linear algebra",
-        "linear",
-        "algebra",
-        "friendly",
-        "friendly-matrix",
-        "friendly matrix"
-    ],
-    "author": "@antholife",
-    "license": "MIT",
-    "description": "A friendly matrix library for JavaScript/Typescript",
-    "repository": {
-        "type": "git",
-        "url": "git+"
-    },
-    "homepage": "",
-    "publishConfig": {
-        "access": "public"
-    }
+  "keywords": [
+    "matrix",
+    "math",
+    "linear algebra",
+    "linear",
+    "algebra",
+    "friendly",
+    "friendly-matrix",
+    "friendly matrix"
+  ],
+  "author": "@antholife",
+  "license": "MIT",
+  "description": "A friendly matrix library for JavaScript/Typescript",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antholife/friendly-matrix.git"
+  },
+  "homepage": "https://antholife.github.io/friendly-matrix/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Antholife/friendly-matrix/issues"
+  }
 }
