@@ -6,7 +6,9 @@ SPDX-License-Identifier: MIT
 
 ![plot](docs/assets/FM.png)
 
-![GitHub License](https://img.shields.io/github/license/Antholife/friendly-matrix)
+![GitHub License](https://img.shields.io/badge/Licence-MIT-green)
+![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2Ffsfe%2Freuse-tool)
+
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/antholife/friendly-matrix)](https://github.com/Antholife/friendly-matrix)
 
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
