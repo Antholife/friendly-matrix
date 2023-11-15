@@ -29,9 +29,20 @@ SPDX-License-Identifier: MIT
 <li><a href="#md:license">License 📝</a></li>
 </ul>
 <hr>
-<a id="md:requirements" class="tsd-anchor"></a><h2><a href="#md:requirements">Requirements</a></h2><p>This project was developed under NodeJS 20.9.0 LTS, and we strongly recommend using it.</p>
+<a id="md:requirements" class="tsd-anchor"></a><h2><a href="#md:requirements">Requirements</a></h2><p>This project was developed under Node.js 20.9.0 LTS, and we strongly recommend using it.</p>
 <p><img src="https://www.developpez.net/forums/attachments/p288914d1/a/a/a" alt="plot"></p>
 <p>Compatible with JS and TS, this module imports type declarations.</p>
+<p>For more information on the use of TypeScript with Node.js, please refer to the <a href="https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html">official documentation</a>.</p>
+<p>⚠️ This module is compatible with CommonJS and ECMAScript formats.</p>
+<p style="margin-left: 20px">For use with vanilla JavaScript (pure JS), no modifications are required.
+    If you wish to force the use of `import` and `export` declarations (ECMAScript), you have two options:</p>
+    <ul style="margin-left: 20px">
+        <li>1. Rename your files from `.js` to `.mjs`.</li>
+        <li>2. Add the key `"type": "module"` to your `package.json` file.</li>
+    </ul>
+
+<p style="margin-left: 20px">When using frameworks such as React, the ECMAScript format is generally expected by default. So no further action is required.
+</p>
 <hr>
 <a id="md:motivations" class="tsd-anchor"></a><h2><a href="#md:motivations">Motivations</a></h2><p>The motivation behind the creation of <strong>Friendly-matrix</strong> is to provide a simple and flexible library for manipulating matrices in JS/TS. This library has been designed to offer developers a user-friendly and versatile solution for working with matrix operations in a variety of development contexts.</p>
 <p>Matrix operations are commonly used in fields such as machine learning, image processing, simulation, video games and more. However, matrix manipulation can be complex and tedious without the right tools. That&#39;s why <strong>Friendly-matrix</strong> aims to simplify these operations by providing an intuitive interface and robust functionality for matrix creation, manipulation and analysis.</p>
@@ -60,8 +71,21 @@ SPDX-License-Identifier: MIT
 <p>For detailed usage and API documentation, refer to <a href="#md:api">API Section</a>.</p>
 <hr>
 <a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><p>You can install Friendly-matrix:</p>
-<pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">friendly-matrix</span><br/><span class="hl-0">or</span><span class="hl-1"> </span><br/><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">friendly-matrix</span>
+<a id="md:using-npm" class="tsd-anchor"></a><h3><a href="#md:using-npm">Using NPM</a></h3><pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-2">friendly-matrix</span>
 </code><button>Copy</button></pre>
+<a id="md:using-yarn" class="tsd-anchor"></a><h3><a href="#md:using-yarn">Using Yarn</a></h3><p>⚠️ The Plug&#39;n&#39;Play feature of Yarn is not supported by this module.</p>
+<p>If the mode is activated (The node modules are not installed in the <code>node_modules</code> folder), the module will not work.</p>
+<p>If you want to use it, you&#39;ll need to add the following line to a <code>.yarnrc.yml</code> file located at the root of the project</p>
+<pre><code class="language-yaml"><span class="hl-3">nodeLinker</span><span class="hl-1">: </span><span class="hl-4">node-modules</span>
+</code><button>Copy</button></pre>
+<p>then,</p>
+<pre><code class="language-bash"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">friendly-matrix</span>
+</code><button>Copy</button></pre>
+<a id="md:using-pnpm" class="tsd-anchor"></a><h3><a href="#md:using-pnpm">Using PNPM</a></h3><p>Yes ! You can use PNPM with this module ! 😎</p>
+<a id="md:the-compatibility-is-ensured-bash-pnpm-add-friendly-matrix-" class="tsd-anchor"></a><p>The compatibility is ensured.</p>
+<pre><code class="language-bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">friendly-matrix</span>
+</code><button>Copy</button></pre>
+<br />
 <hr>
 <a id="md:basic-usage" class="tsd-anchor"></a><h2><a href="#md:basic-usage">Basic Usage</a></h2><pre><code class="language-typescript"><span class="hl-3">// Import required functions and classes</span><br/><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">Matrix</span><span class="hl-1">, </span><span class="hl-5">fm_identity</span><span class="hl-1">, </span><span class="hl-5">FM_ORDER</span><span class="hl-1">, </span><span class="hl-5">fm_usage</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;friendly-matrix&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">//OR</span><br/><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">your_name</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;friendly-matrix&#39;</span><span class="hl-1">;</span><br/><span class="hl-5">your_name</span><span class="hl-1">.</span><span class="hl-0">fm_identity</span><span class="hl-1">(</span><span class="hl-6">4</span><span class="hl-1">);</span>
 </code><button>Copy</button></pre>

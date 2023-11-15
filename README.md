@@ -38,12 +38,23 @@ Friendly-matrix is a JavaScript library that provides a user-friendly interface 
 
 ## Requirements
 
-This project was developed under NodeJS 20.9.0 LTS, and we strongly recommend using it.
+This project was developed under Node.js 20.9.0 LTS, and we strongly recommend using it.
 
 ![plot](https://www.developpez.net/forums/attachments/p288914d1/a/a/a)
 
 Compatible with JS and TS, this module imports type declarations.
 
+For more information on the use of TypeScript with Node.js, please refer to the [official documentation](https://www.typescriptlang.org/).
+
+⚠️ This module is compatible with CommonJS and ECMAScript formats.
+
+For use with vanilla JavaScript (pure JS), no modifications are required.
+
+If you wish to force the use of `import` and `export` declarations (ECMAScript), you have two options:
+1. Rename your files from `.js` to `.mjs`.
+2. Add the key `"type": "module"` to your `package.json` file.
+
+When using frameworks such as React, the ECMAScript format is generally expected by default. So no further action is required.
 
 ---
 
@@ -92,10 +103,30 @@ For detailed usage and API documentation, refer to [API Section](#api).
 
 You can install Friendly-matrix:
 
+### Using NPM
 ```bash
-npm install friendly-matrix
-or 
+npm i friendly-matrix
+```
+
+### Using Yarn
+⚠️ The Plug'n'Play feature of Yarn is not supported by this module.
+
+If the mode is activated (The node modules are not installed in the `node_modules` folder), the module will not work.
+
+If you want to use it, you'll need to add the following line to a `.yarnrc.yml` file located at the root of the project
+```yaml
+nodeLinker: node-modules
+```
+then,
+```bash
 yarn add friendly-matrix
+```
+### Using PNPM
+Yes ! You can use PNPM with this module ! 😎
+
+The compatibility is ensured.
+```bash
+pnpm add friendly-matrix
 ```
 
 ---
