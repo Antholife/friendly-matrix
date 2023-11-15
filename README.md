@@ -2,8 +2,8 @@
 
 ![plot](docs/assets/FM.png)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub version](https://img.shields.io/github/package-json/v/Antholife/friendly-matrix)
+[![GitHub License](https://img.shields.io/github/license/Antholife/friendly-matrix)](https://opensource.org/licenses/MIT)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/antholife/friendly-matrix)](https://github.com/Antholife/friendly-matrix)
 
 [![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/friendly-matrix)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Antholife/friendly-matrix)
