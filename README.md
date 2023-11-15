@@ -8,14 +8,16 @@
 #
 Friendly-matrix is a JavaScript library that provides a user-friendly interface for matrix manipulation. It simplifies various matrix operations, offering flexibility and ease of use for developers working with matrices in JS/TS projects.
 
+****=> For better visibility, details, docs, readMe and the complete API documentation can be found [here](https://antholife.github.io/friendly-matrix/) ! 😎****
 # Contents
 - [Requirements 📋](#-requirements)
 - [Motivations 💪](#motivations)
 - [Features 🛠️](#features)
 - [Installation ⬇️](#installation)
-- [Usage](#usage)
-- [Code of Conduct](#code-of-conduct)
-- [License](#license)
+- [Basic usage 🧐](#basic-usage)
+- [API ⚙️](#api)
+- [Advanced API 🧪](#advanced-api)
+- [License 📝](#license)
 
 ---
 
@@ -49,8 +51,9 @@ This library has been created with the aim of giving developers easy access to b
 - **Matrix Transformation**
 - **Additional Matrix Operations**
 - **Accessing Matrix Elements**
+- **In Place Operations**
 
-For detailed usage and API documentation, refer to [API Section](https://link-to-full-documentation).
+For detailed usage and API documentation, refer to [API Section](#api).
 
 ---
 
@@ -66,10 +69,196 @@ yarn add friendly-matrix
 
 ---
 
-## Usage
+## Basic Usage
+
+```typescript
+// Import required functions and classes
+import { Matrix, fm_identity, FM_ORDER, fm_usage } from 'friendly-matrix';
+//OR
+import your_name from 'friendly-matrix';
+your_name.fm_identity(4);
+```
+
+```typescript
+// Example usage of the FriendlyMatrix class
+
+// Create a matrix instance
+const matrix = new Matrix({
+    rows: 3,
+    cols: 3,
+    ORDER: FM_ORDER.RowMajor,
+    matrix: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+});
+
+// Get matrix details
+console.log('Rows:', matrix.getRows()); // Output: Rows: 3
+console.log('Columns:', matrix.getCols()); // Output: Columns: 3
+console.log('Size:', matrix.getSize()); // Output: Size: 9
+console.log('Order:', matrix.getOrder()); // Output: Order: RowMajor
+
+// Transpose the matrix
+const transposedMatrix = matrix.transpose();
+console.log('Transposed Matrix:', transposedMatrix.getMatrix()); // Output: Transposed Matrix: [1, 4, 7, 2, 5, 8, 3, 6, 9]
+
+// Add another matrix
+const anotherMatrix = new Matrix({
+    rows: 3,
+    cols: 3,
+    ORDER: FM_ORDER.RowMajor,
+    matrix: [9, 8, 7, 6, 5, 4, 3, 2, 1]
+});
+
+const addedMatrix = matrix.addition(anotherMatrix);
+console.log('Added Matrix:', addedMatrix.getMatrix()); // Output: Added Matrix: [10, 10, 10, 10, 10, 10, 10, 10, 10]
+
+// Scale the matrix
+const scaledMatrix = matrix.scale(2, '+');
+console.log('Scaled Matrix:', scaledMatrix.getMatrix()); // Output: Scaled Matrix: [2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+// Check matrix equality
+console.log('Matrix Equality:', matrix.equals(scaledMatrix)); // Output: Matrix Equality: false
+
+// Get a specific value from the matrix
+console.log('Value at (2, 2):', matrix.get(1, 1)); // Output: Value at (2, 2): 5
+
+// Set a value in the matrix
+matrix.set(1, 1, 10);
+console.log('Updated Matrix:', matrix.getMatrix()); // Output: Updated Matrix: [1, 2, 3, 4, 10, 6, 7, 8, 9]
+
+// Generate an identity matrix
+const identityMatrix = identity(4);
+console.log('Identity Matrix:', identityMatrix.getMatrix()); // Output: Identity Matrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+
+const multipliedMatrix = matrix.multiplication(anotherMatrix);
+console.log('Multiplied Matrix:', multipliedMatrix.getMatrix()); // Output: Multiplied Matrix: [2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+// Raise matrix to a given exponent
+const squaredMatrix = matrix.pow(2);
+console.log('Squared Matrix:', squaredMatrix.getMatrix()); // Output: Squared Matrix: [30, 36, 42, 66, 81, 96, 102, 126, 150]
+
+// Update matrix array
+const updatedMatrixArray = [3, 6, 9, 2, 5, 8, 1, 4, 7];
+matrix.updateMatrix(updatedMatrixArray);
+console.log('Updated Matrix:', matrix.getMatrix()); // Output: Updated Matrix: [3, 6, 9, 2, 5, 8, 1, 4, 7]
+
+// Update matrix order
+matrix.updateOrder(FM_ORDER.ColumnMajor);
+console.log('Updated Order:', matrix.getOrder()); // Output: Updated Order: ColumnMajor
+
+// In-place scaling
+matrix.scaleInPlace(2, '+');
+console.log('Scaled Matrix:', matrix.getMatrix()); // Output: Scaled Matrix: [3, 6, 9, 6, 7, 10, 9, 8, 11]
+
+//Other operations...
+```
+---
+
+## API
+
+### Simply modules
+
+#### Matrix Class
+The `Matrix` class is a representation of a matrix (a one-dimensional array of numbers) that offers various functionalities for performing operations on these matrices.
+
+It has a constructor that takes several parameters:
+- `rows`: the number of rows in the matrix.
+- `cols`: the number of columns in the matrix.
+- `ORDER` : the order of the matrix, either "RowMajor" or "ColumnMajor".
+- `matrix` : an array of numbers representing the matrix.
+
+If the parameters supplied to the constructor are invalid, an error will be generated.
+
+The `Matrix` class also contains a `size` property, which is calculated as a function of row and column.
+It provides methods for performing various operations on matrices, such as transposition, addition, subtraction, multiplication, scaling, matrix inversion, and many more. These methods can be used to manipulate and perform calculations on matrices efficiently.
+
+These parameters represent a config (so it's possible to import from a config.(js|ts) file, in the form of an object.
+
+```typescript
+const matrix = new Matrix({
+    rows: 3,
+    cols: 3,
+    ORDER: FM_ORDER.RowMajor,
+    matrix: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+});
+```
+
+**What's the order of the matrix ?** 
+
+`FM_ORDER` is an enumeration used to represent the order of a matrix in the `Matrix` class. This enumeration offers two constants:
+- `RowMajor`: This constant represents the storage order of the matrix where elements are ordered successively by rows.
+- `ColumnMajor`: This constant represents the storage order of the matrix, where elements are arranged successively by column.
+
+The use of this enumeration makes it possible to specify the organization of data in a matrix when creating or manipulating it in the `Matrix` class. It provides a clear and explicit way of defining the order of matrix elements for operations such as matrix creation, initialization or manipulation.
+
+```typescript
+const ORDER = {
+    RowMajor: 'RowMajor',
+    ColumnMajor: 'ColumnMajor',
+};
+```
+
+These values are displayed through FM_ORDER:
+
+```typescript
+import { FM_ORDER } from 'friendly-matrix';
+```
+
+For example:
+
+```typescript
+// RowMajor
+const rowMajorMatrix = new FriendlyMatrix({
+    rows: 2,
+    cols: 2,
+    ORDER: FM_ORDER.RowMajor,
+    matrix: [1, 2, 3, 4]
+});
+// rowMajorMatrix.trace()
+        | 1  2 |
+        | 3  4 |
 
 
+// ColumnMajor
+const colMajorMatrix = new FriendlyMatrix({
+    rows: 2,
+    cols: 2,
+    ORDER: FM_ORDER.ColumnMajor,
+    matrix: [1, 2, 3, 4]
+});
+// columnMajorMatrix.trace()
+        | 1  3 |
+        | 2  4 |
+```
 
+#### Identity Matrix
+
+The `fm_identity` function is used to generate an identity matrix of the given size. It takes a single parameter, `size`, which is the size of the identity matrix to be generated.
+
+```typescript
+const identityMatrix = fm_identity(4);
+```
+
+#### Usage
+
+The `fm_usage` function is used to display a string describing the usage of the `Matrix` class. It takes no parameters and returns a string describing the usage of the `Matrix` class.
+
+```typescript
+const usage = fm_usage();
+```
+
+**NOTE**
+
+For the trace() method, the matrix is displayed in the console, the output is formatted string (with \n) 
+
+***So it's up to you to adapt the reading of this string to your own framework and so on.***
+
+For example, use `<pre>` tag in HTML.
+
+---
+
+### Advanced API
+
+****For better visibility, the complete API documentation can be found [here](https://antholife.github.io/friendly-matrix/) ! 😎****
 
 - [Classes](#classes)
   - [Matrix](#matrix)
@@ -141,32 +330,23 @@ Class representing a friendly matrix with various operations.
 
 ##### constructor
 
-• **new Matrix**(`params`): [`Matrix`](#matrix)
+• **new Matrix**(`config`): [`Matrix`](#matrix)
 
 Constructor for the FriendlyMatrix class.
 
 ###### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `params` | `Object` | Constructor parameters. |
-| `params.ORDER?` | `string` | The order of the matrix. |
-| `params.cols?` | `number` | The number of columns. |
-| `params.fromFriendlyMatrix?` | [`Matrix`](#matrix) | Another FriendlyMatrix to copy. |
-| `params.matrix?` | `number`[] | Array of numbers representing the matrix. |
-| `params.rows?` | `number` | The number of rows. |
+| Name            | Type | Description |
+|:----------------| :------ | :------ |
+| `config`        | `Object` | Constructor parameters. |
+| `config.ORDER`  | `string` | The order of the matrix. |
+| `config.cols`   | `number` | The number of columns. |
+| `config.matrix` | `number`[] | Array of numbers representing the matrix. |
+| `config.rows`   | `number` | The number of rows. |
 
 ###### Returns
 
 [`Matrix`](#matrix)
-
-**`Throws`**
-
-Throws an error if parameters are invalid.
-
-###### Defined in
-
-index.d.ts:34
 
 #### Properties
 
@@ -174,49 +354,26 @@ index.d.ts:34
 
 • **ORDER**: `string`
 
-###### Defined in
-
-index.d.ts:44
-
 ___
 
 ##### cols
 
 • **cols**: `number`
-
-###### Defined in
-
-index.d.ts:42
-
 ___
 
 ##### matrix
 
 • **matrix**: `number`[]
 
-###### Defined in
-
-index.d.ts:45
-
 ___
 
 ##### rows
 
-• **rows**: `number`
-
-###### Defined in
-
-index.d.ts:41
-
-___
+• **rows**: `number`_
 
 ##### size
 
 • **size**: `number`
-
-###### Defined in
-
-index.d.ts:43
 
 #### Methods
 
@@ -242,10 +399,6 @@ Add another matrix to this matrix and return a new matrix.
 
 Will throw an error if matrix dimensions or ordering do not match.
 
-###### Defined in
-
-index.d.ts:61
-
 ___
 
 ##### additionInPlace
@@ -267,11 +420,6 @@ Add another matrix to this matrix in place.
 **`Throws`**
 
 Will throw an error if matrix dimensions or ordering do not match.
-
-###### Defined in
-
-index.d.ts:67
-
 ___
 
 ##### assign
@@ -290,10 +438,6 @@ Assign this matrix to another matrix.
 
 `void`
 
-###### Defined in
-
-index.d.ts:169
-
 ___
 
 ##### convertToOpposedOrder
@@ -306,10 +450,6 @@ Convert this matrix order to the opposed order and return a new matrix (with new
 
 [`Matrix`](#matrix)
 
-###### Defined in
-
-index.d.ts:119
-
 ___
 
 ##### convertToOpposedOrderInPlace
@@ -321,11 +461,6 @@ Convert this matrix order to the opposed order in place (with new matrix array).
 ###### Returns
 
 `void`
-
-###### Defined in
-
-index.d.ts:123
-
 ___
 
 ##### copy
@@ -337,64 +472,6 @@ Copy this matrix and return a new matrix.
 ###### Returns
 
 [`Matrix`](#matrix)
-
-###### Defined in
-
-index.d.ts:163
-
-___
-
-##### divide
-
-▸ **divide**(`other`): [`Matrix`](#matrix)
-
-Divide this matrix by another matrix and return a new matrix.
-
-###### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `other` | [`Matrix`](#matrix) | The matrix to divide by. |
-
-###### Returns
-
-[`Matrix`](#matrix)
-
-- The resulting matrix.
-
-**`Throws`**
-
-Will throw an error if matrix dimensions do not match.
-
-###### Defined in
-
-index.d.ts:135
-
-___
-
-##### divideInPlace
-
-▸ **divideInPlace**(`other`): `void`
-
-Divide this matrix by another matrix in place.
-
-###### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `other` | [`Matrix`](#matrix) | The matrix to divide by. |
-
-###### Returns
-
-`void`
-
-**`Throws`**
-
-Will throw an error if matrix dimensions do not match.
-
-###### Defined in
-
-index.d.ts:141
 
 ___
 
@@ -415,11 +492,6 @@ Check if this matrix is equal to another matrix.
 `boolean`
 
 - True if matrices are equal, false otherwise.
-
-###### Defined in
-
-index.d.ts:114
-
 ___
 
 ##### get
@@ -441,10 +513,6 @@ Get the value at the specified row and column.
 
 - The value at the specified position.
 
-###### Defined in
-
-index.d.ts:190
-
 ___
 
 ##### getCols
@@ -457,10 +525,6 @@ ___
 
 ###### Defined in
 
-index.d.ts:199
-
-___
-
 ##### getConvertedMatrix
 
 ▸ **getConvertedMatrix**(): `number`[]
@@ -470,11 +534,6 @@ Convert this matrix ORDER to the opposed ORDER and return the matrix array (No m
 ###### Returns
 
 `number`[]
-
-###### Defined in
-
-index.d.ts:128
-
 ___
 
 ##### getMatrix
@@ -484,11 +543,6 @@ ___
 ###### Returns
 
 `number`[]
-
-###### Defined in
-
-index.d.ts:202
-
 ___
 
 ##### getOrder
@@ -498,10 +552,6 @@ ___
 ###### Returns
 
 `string`
-
-###### Defined in
-
-index.d.ts:201
 
 ___
 
@@ -513,10 +563,6 @@ ___
 
 `number`
 
-###### Defined in
-
-index.d.ts:198
-
 ___
 
 ##### getSize
@@ -526,10 +572,6 @@ ___
 ###### Returns
 
 `number`
-
-###### Defined in
-
-index.d.ts:200
 
 ___
 
@@ -542,10 +584,6 @@ Inverse the rows and columns of this matrix.
 ###### Returns
 
 [`Matrix`](#matrix)
-
-###### Defined in
-
-index.d.ts:183
 
 ___
 
@@ -571,10 +609,6 @@ Multiply this matrix by another matrix and return a new matrix.
 
 Will throw an error if matrix dimensions do not match.
 
-###### Defined in
-
-index.d.ts:87
-
 ___
 
 ##### multiplicationInPlace
@@ -596,10 +630,6 @@ Multiply this matrix by another matrix in place.
 **`Throws`**
 
 Will throw an error if matrix dimensions do not match.
-
-###### Defined in
-
-index.d.ts:93
 
 ___
 
@@ -624,11 +654,6 @@ Raise this matrix to a given exponent and return a new matrix.
 **`Throws`**
 
 Will throw an error if the matrix is not square or the exponent is negative.
-
-###### Defined in
-
-index.d.ts:148
-
 ___
 
 ##### powInPlace
@@ -650,10 +675,6 @@ Raise this matrix to a given exponent in place.
 **`Throws`**
 
 Will throw an error if the matrix is not square or the exponent is negative.
-
-###### Defined in
-
-index.d.ts:154
 
 ___
 
@@ -677,10 +698,6 @@ Operator available: +, -, *, /, %, ^, sqrt
 
 - The resulting matrix.
 
-###### Defined in
-
-index.d.ts:101
-
 ___
 
 ##### scaleInPlace
@@ -701,10 +718,6 @@ Operator available: +, -, *, /, %, ^, sqrt
 
 `void`
 
-###### Defined in
-
-index.d.ts:108
-
 ___
 
 ##### set
@@ -724,10 +737,6 @@ Set the value at the specified row and column.
 ###### Returns
 
 `void`
-
-###### Defined in
-
-index.d.ts:197
 
 ___
 
@@ -753,10 +762,6 @@ Subtract another matrix from this matrix and return a new matrix.
 
 Will throw an error if matrix dimensions or ordering do not match.
 
-###### Defined in
-
-index.d.ts:74
-
 ___
 
 ##### subtractionInPlace
@@ -779,10 +784,6 @@ Subtract another matrix from this matrix in place.
 
 Will throw an error if matrix dimensions or ordering do not match.
 
-###### Defined in
-
-index.d.ts:80
-
 ___
 
 ##### trace
@@ -794,10 +795,6 @@ Print the matrix to the console.
 ###### Returns
 
 `string`
-
-###### Defined in
-
-index.d.ts:158
 
 ___
 
@@ -813,10 +810,6 @@ Transposes the matrix.
 
 New transposed matrix.
 
-###### Defined in
-
-index.d.ts:50
-
 ___
 
 ##### transposeInPlace
@@ -828,10 +821,6 @@ Transposes the matrix in place.
 ###### Returns
 
 `void`
-
-###### Defined in
-
-index.d.ts:54
 
 ___
 
@@ -851,10 +840,6 @@ Update the matrix array of this matrix.
 
 `void`
 
-###### Defined in
-
-index.d.ts:174
-
 ___
 
 ##### updateOrder
@@ -872,121 +857,3 @@ Update the ORDER of this matrix.
 ###### Returns
 
 `void`
-
-###### Defined in
-
-index.d.ts:179
-
-# Modules
-
-[friendly-matrix](#readme) / Exports
-
-## friendly-matrix
-
-### Table of contents
-
-#### Namespaces
-
-- [FM\_ORDER](#fm-order)
-
-#### Classes
-
-- [Matrix](#matrix)
-
-#### Type Aliases
-
-- [FM\_ORDER](#fm_order)
-
-#### Functions
-
-- [fm\_identity](#fm_identity)
-- [fm\_usage](#fm_usage)
-
-### Type Aliases
-
-#### FM\_ORDER
-
-Ƭ **FM\_ORDER**: `string`
-
-Enumeration representing the order of a matrix.
-
-##### Defined in
-
-index.d.ts:15
-
-index.d.ts:16
-
-### Functions
-
-#### fm\_identity
-
-▸ **fm_identity**(`size`): [`Matrix`](#matrix)
-
-Generate an identity matrix of the given size.
-
-##### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `size` | `number` | The size of the identity matrix. |
-
-##### Returns
-
-[`Matrix`](#matrix)
-
-- The identity matrix.
-
-##### Defined in
-
-index.d.ts:6
-
-___
-
-#### fm\_usage
-
-▸ **fm_usage**(): `string`
-
-Returns a string describing the usage of the FriendlyMatrix class.
-
-##### Returns
-
-`string`
-
-Description of the FriendlyMatrix class usage.
-
-##### Defined in
-
-index.d.ts:11
-
-# Modules
-
-## FM ORDER
-
-### Namespace: FM\_ORDER
-
-#### Table of contents
-
-##### Variables
-
-- [ColumnMajor](#columnmajor)
-- [RowMajor](#rowmajor)
-
-#### Variables
-
-##### ColumnMajor
-
-• `Const` **ColumnMajor**: `string`
-
-###### Defined in
-
-index.d.ts:18
-
-___
-
-##### RowMajor
-
-• `Const` **RowMajor**: `string`
-
-###### Defined in
-
-index.d.ts:17
