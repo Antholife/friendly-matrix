@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Antholife
+
+SPDX-License-Identifier: MIT
+-->
+
 # Contributing to Friendly-matrix
 
 Welcome to Friendly-matrix! We appreciate your interest in contributing to this project. Please take a moment to review the following guidelines to make the contribution process smooth and effective.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Antholife
+
+SPDX-License-Identifier: MIT
+-->
+
 # Code of Conduct
 
 We are dedicated to providing a welcoming and inclusive environment for everyone, regardless of age, gender, sexual orientation, disability, physical appearance, race, ethnicity, religion, or experience level. To ensure a positive experience for all contributors and users, we have established the following guidelines:
