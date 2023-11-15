@@ -5,6 +5,10 @@
 [![npm version](https://img.shields.io/npm/v/friendly-matrix.svg)](https://www.npmjs.com/package/friendly-matrix)
 [![Version Status](https://travis-ci.com/yourusername/friendly-matrix.svg?branch=master)](https://travis-ci.com/yourusername/friendly-matrix)
 [![License](https://img.shields.io/npm/l/friendly-matrix.svg)](https://www.npmjs.com/package/friendly-matrix)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
 #
 Friendly-matrix is a JavaScript library that provides a user-friendly interface for matrix manipulation. It simplifies various matrix operations, offering flexibility and ease of use for developers working with matrices in JS/TS projects.
 

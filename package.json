@@ -1,10 +1,31 @@
 {
   "name": "friendly-matrix",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "files": [
     "lib/index.js",
     "lib/index.d.ts"
   ],
-  "types": "index.d.ts"
+  "types": "lib/index.d.ts",
+    "keywords": [
+        "matrix",
+        "math",
+        "linear algebra",
+        "linear",
+        "algebra",
+        "friendly",
+        "friendly-matrix",
+        "friendly matrix"
+    ],
+    "author": "@antholife",
+    "license": "MIT",
+    "description": "A friendly matrix library for JavaScript/Typescript",
+    "repository": {
+        "type": "git",
+        "url": "git+"
+    },
+    "homepage": "",
+    "publishConfig": {
+        "access": "public"
+    }
 }
