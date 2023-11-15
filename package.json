@@ -22,7 +22,7 @@
   "description": "A friendly matrix library for JavaScript/Typescript",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Antholife/friendly-matrix.git"
+    "url": "https://github.com/Antholife/friendly-matrix.git"
   },
   "homepage": "https://antholife.github.io/friendly-matrix/",
   "publishConfig": {
@@ -37,8 +37,5 @@
   },
   "bugs": {
     "url": "https://github.com/Antholife/friendly-matrix/issues"
-  },
-  "dependencies": {
-    "reuse": "^2.0.0"
   }
 }

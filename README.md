@@ -6,8 +6,8 @@ SPDX-License-Identifier: MIT
 
 ![plot](docs/assets/FM.png)
 
-![GitHub License](https://img.shields.io/badge/Licence-MIT-green)
-![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2Ffsfe%2Freuse-tool)
+[![GitHub License](https://img.shields.io/badge/Licence-MIT-green)](https://opensource.org/license/mit/)
+[![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2Ffsfe%2Freuse-tool)](https://reuse.software/)
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/antholife/friendly-matrix)](https://github.com/Antholife/friendly-matrix)
 
@@ -24,7 +24,7 @@ Friendly-matrix is a JavaScript library that provides a user-friendly interface 
 
 ****=> For better visibility, details, docs, readMe and the complete API documentation can be found [here](https://antholife.github.io/friendly-matrix/) ! 😎****
 # Contents
-- [Requirements 📋](#-requirements)
+- [Requirements 📋](#requirements)
 - [Motivations 💪](#motivations)
 - [Contributing](#contributing)
 - [Features 🛠️](#features)
