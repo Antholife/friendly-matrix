@@ -22,11 +22,11 @@ Friendly-matrix is a JavaScript library that provides a user-friendly interface 
 ## Requirements
 
 This project was developed under NodeJS 20.9.0 LTS, and we strongly recommend using it.
-#
+
 ![plot](https://www.developpez.net/forums/attachments/p288914d1/a/a/a)
 
 Compatible with JS and TS, this module imports type declarations.
-#
+
 
 ---
 
@@ -37,7 +37,7 @@ The motivation behind the creation of **Friendly-matrix** is to provide a simple
 Matrix operations are commonly used in fields such as machine learning, image processing, simulation, video games and more. However, matrix manipulation can be complex and tedious without the right tools. That's why **Friendly-matrix** aims to simplify these operations by providing an intuitive interface and robust functionality for matrix creation, manipulation and analysis.
 
 This library has been created with the aim of giving developers easy access to basic matrix manipulation functionality, while offering them the possibility of extending this functionality according to their specific needs.
-#
+
 
 ---
 
