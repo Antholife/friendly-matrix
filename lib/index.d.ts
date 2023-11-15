@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Antholife
+//
+// SPDX-License-Identifier: MIT
+
 /**
  * Generate an identity matrix of the given size.
  * @param {number} size - The size of the identity matrix.

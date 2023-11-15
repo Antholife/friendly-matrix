@@ -1,6 +1,6 @@
 {
   "name": "friendly-matrix",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "lib/index.js",
   "files": [
     "lib/index.js",
@@ -18,7 +18,7 @@
     "friendly matrix"
   ],
   "author": "@antholife",
-  "license": "MIT",
+  "license": "(MIT OR CC0-1.0)",
   "description": "A friendly matrix library for JavaScript/Typescript",
   "repository": {
     "type": "git",
@@ -32,11 +32,13 @@
     "doc": "docs",
     "lib": "lib"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/Antholife/friendly-matrix/issues"
+  },
+  "dependencies": {
+    "reuse": "^2.0.0"
   }
 }

@@ -1,15 +1,18 @@
+<!--
+SPDX-FileCopyrightText: 2023 Antholife
 
+SPDX-License-Identifier: MIT
+-->
 
 ![plot](docs/assets/FM.png)
 
-[![GitHub License](https://img.shields.io/github/license/Antholife/friendly-matrix)](https://opensource.org/licenses/MIT)
+![GitHub License](https://img.shields.io/github/license/Antholife/friendly-matrix)
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/antholife/friendly-matrix)](https://github.com/Antholife/friendly-matrix)
+
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
 
 [![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/friendly-matrix)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Antholife/friendly-matrix)
-![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
-
-[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
 
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -21,6 +24,7 @@ Friendly-matrix is a JavaScript library that provides a user-friendly interface 
 # Contents
 - [Requirements 📋](#-requirements)
 - [Motivations 💪](#motivations)
+- [Contributing](#contributing)
 - [Features 🛠️](#features)
 - [Installation ⬇️](#installation)
 - [Basic usage 🧐](#basic-usage)
@@ -49,6 +53,22 @@ Matrix operations are commonly used in fields such as machine learning, image pr
 
 This library has been created with the aim of giving developers easy access to basic matrix manipulation functionality, while offering them the possibility of extending this functionality according to their specific needs.
 
+
+---
+
+## Contributing
+
+Contributions are welcome! To contribute to Friendly-matrix, follow these steps:
+
+1. **Fork** the project
+2. Create a branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push the branch (`git push origin feature/AmazingFeature`)
+5. Open a **Pull Request**
+
+Please also read the [Contribution Guide](CONTRIBUTING.md) for detailed information on the contribution process, coding style, etc.
+
+We welcome all kinds of contributions, from bug fixes to new features, and greatly appreciate your efforts to enhance this project.
 
 ---
 
@@ -871,4 +891,7 @@ Update the ORDER of this matrix.
 
 ## License
 
-© 2023, Antholife. Released under [MIT License](./LICENCE).
+© 2023, Antholife. Released under [MIT License](./LICENSES/MIT.txt).
+
+Some non-copyrighted files are available under [CC0 1.0 Universal](./LICENSES/CC0-1.0.txt).
+
